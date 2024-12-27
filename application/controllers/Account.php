@@ -10,15 +10,16 @@ class Account extends REST_Controller {
         $this->load->model('account_model');
     }
 
+    //Login
     function index_post() {
         $username = $this->post('username');
         $password = $this->post('password');
         $data = $this->account_model->login($username, $password);
-        // $this->response($data, REST_Controller::HTTP_OK);
+
         if (empty($data)){
             $output = array(
                 'success' => false,
-                'message' => 'Username or Password is incorrect',
+                'message' => 'Username atau Password Salah, Silahkan Coba Lagi',
                 'data' => null
             );
             $this->response($output, REST_Controller::HTTP_OK);
@@ -28,7 +29,7 @@ class Account extends REST_Controller {
             $result = $data;
             $output = array(
                 'success' => true,
-                'message' => 'Login Success',
+                'message' => 'Login Berhasil',
                 'data' => $data
             );
             $this->response($output, REST_Controller::HTTP_OK);

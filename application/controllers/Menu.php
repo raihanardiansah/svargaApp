@@ -9,7 +9,8 @@ class Menu extends REST_Controller{
     parent::__construct();
     $this->load->model('Menu_model');
     }
-    //function get/show data food
+    
+    //menampilkan data menu
     function index_get(){
         //call function getFood from model 
         $data = $this->Menu_model->getMenu();

@@ -55,6 +55,5 @@ $route['translate_uri_dashes'] = FALSE;
 // routes.php
 $route['cart/add'] = 'Cart/add_to_cart';
 $route['cart/items/(:num)'] = 'cart/$1';
-$route['cart/update/(:num)'] = 'Cart/update/$1';
-
-
+$route['cart/update/(:num)'] = 'cart/$1';
+$route['cart/remove/(:num)/(:num)'] = 'cart/$1/$2';

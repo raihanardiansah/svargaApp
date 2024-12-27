@@ -7,6 +7,7 @@ class Menu_model extends CI_Model {
         $this->load->database();
     }
 
+    // Fungsi untuk mengambil semua data menu
     public function getMenu() {
         $data = $this->db->get('menu');
         return $data->result_array();

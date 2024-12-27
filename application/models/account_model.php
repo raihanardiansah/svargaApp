@@ -8,6 +8,7 @@ class Account_model extends CI_Model {
         $this->load->database();
     }
 
+    // Fungsi untuk melakukan login
     public function login($username, $password) {
         $this->db->where('username', $username);
         $this->db->where('password', $password);
@@ -15,6 +16,4 @@ class Account_model extends CI_Model {
         return $data->row_array();
     }
 }
-
-
 ?>
