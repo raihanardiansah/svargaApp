@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-require(APPPATH.'libraries/REST_Controller.php');
+require(APPPATH . 'libraries/REST_Controller.php');
 
 class Cart extends REST_Controller {
 
@@ -128,5 +128,4 @@ class Cart extends REST_Controller {
                 'message' => 'Gagal menghapus item'
             ], REST_Controller::HTTP_BAD_REQUEST);
         }
-    }     
-}
+    }}

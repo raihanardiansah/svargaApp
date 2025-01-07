@@ -85,4 +85,31 @@ class M_cart extends CI_Model {
             return false;
         }
     }
+
+
+    // Fungsi untuk membuat pesanan
+public function create_order($order_data) {
+    // Memasukkan data pesanan ke tabel orders
+    $this->db->insert('orders', $order_data);
+    
+    // Mengembalikan ID pesanan yang baru dibuat
+    return $this->db->insert_id();
+}
+
+// Fungsi untuk menambahkan item pesanan ke tabel order_items
+public function add_order_item($order_item_data) {
+    // Memasukkan item pesanan ke tabel order_items
+    return $this->db->insert('order_items', $order_item_data);
+}
+
+// Fungsi untuk mengosongkan keranjang setelah pesanan dibuat
+public function clear_cart($user_id) {
+    // Menghapus semua item di keranjang untuk user tertentu
+    $this->db->where('user_id', $user_id);
+    $this->db->delete('cart');
+    
+    // Mengembalikan true jika ada perubahan
+    return $this->db->affected_rows() > 0;
+}
+
 }

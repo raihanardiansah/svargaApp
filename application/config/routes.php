@@ -57,3 +57,4 @@ $route['cart/add'] = 'Cart/add_to_cart';
 $route['cart/items/(:num)'] = 'cart/$1';
 $route['cart/update/(:num)'] = 'cart/$1';
 $route['cart/remove/(:num)/(:num)'] = 'cart/$1/$2';
+$route['cart/add_order'] = 'cart/add_order_post';
