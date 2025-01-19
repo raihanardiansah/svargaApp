@@ -18,16 +18,17 @@ class Orders extends REST_Controller {
         $user_id = $this->post('user_id');
         $total = $this->post('total');
         $location = $this->post('location');
+        $order_data = $this->post();
         
         // Validasi input
         if ($user_id && $total) {
             // Menyimpan data pesanan
             $order_data = array(
                 'user_id' => $user_id,
-                'order_date' => date('Y-m-d H:i:s'),
                 'status' => 'belum bayar', // Status default
                 'total' => $total,
-                'location' => $location
+                'location' => $location,
+                'order_date' => date('Y-m-d H:i:s', $order_data['order_date'] / 1000),
             );
         
             // Memasukkan pesanan ke database

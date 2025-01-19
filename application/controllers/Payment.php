@@ -45,10 +45,10 @@ class Payment extends REST_Controller {
             $this->Payment_model->update_order_total($payment_data['order_id'], $payment_data['total']);
 
             // Mengembalikan respons berhasil
-            $this->response(['message' => 'Payment created successfully', 'payment_id' => $payment_id], REST_Controller::HTTP_OK);
+            $this->response(['message' => 'Pembayaran berhasil', 'payment_id' => $payment_id], REST_Controller::HTTP_OK);
         } else {
             // Jika gagal, mengembalikan respons gagal
-            $this->response(['error' => 'Failed to create payment'], REST_Controller::HTTP_INTERNAL_SERVER_ERROR);
+            $this->response(['error' => 'Pembayaran gagal'], REST_Controller::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
 }
